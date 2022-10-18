@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: ca.randoli.quickstart.springboot.helloservice.HelloServiceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 20.113 s - in ca.randoli.quickstart.springboot.helloservice.HelloServiceApplicationTests

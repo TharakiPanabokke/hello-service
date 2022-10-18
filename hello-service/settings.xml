@@ -1,0 +1,45 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <servers>
+        <server>
+            <id>s3-repo-snapshot</id>
+            <username>AKIAXDWIDZOQYQ3M5SUQ</username>
+            <password>${env.MAVEN_REPO_PASSWORD}</password>
+            <configuration>
+                <region>ca-central-1</region>
+                <publicRepository>true</publicRepository>
+            </configuration>
+        </server>
+        <server>
+            <id>s3-repo-release</id>
+            <username>AKIAXDWIDZOQYQ3M5SUQ</username>
+            <password>${env.MAVEN_REPO_PASSWORD}</password>
+            <configuration>
+                <region>ca-central-1</region>
+                <publicRepository>true</publicRepository>
+            </configuration>
+        </server>
+    </servers>
+
+    <profiles>
+        <profile>
+            <id>service-build</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>s3-repo-snapshot</id>
+                    <url>s3://randoli-mvn/snapshot</url>
+                </repository>
+                <repository>
+                    <id>s3-repo-release</id>
+                    <url>s3://randoli-mvn/release</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+
+</settings>
